@@ -41,30 +41,30 @@ export const booknavConfig: BooknavGroup[] = [
 				icon: "fa7-brands:github",
 				weight: 10,
 			},
-			{
-				title: "MDN Web Docs",
-				url: "https://developer.mozilla.org",
-				desc: "最权威的 Web 技术文档",
-				weight: 9,
-			},
-			{
-				title: "Astro",
-				url: "https://astro.build",
-				desc: "内容驱动型网站的 Web 框架",
-				weight: 8,
-			},
-			{
-				title: "Svelte",
-				url: "https://svelte.dev",
-				desc: "把组件编译成高效原生 JS 的框架",
-				weight: 7,
-			},
-			{
-				title: "Tailwind CSS",
-				url: "https://tailwindcss.com",
-				desc: "一个功能强大且灵活的 CSS 框架",
-				weight: 6,
-			},
+			// {
+			// 	title: "MDN Web Docs",
+			// 	url: "https://developer.mozilla.org",
+			// 	desc: "最权威的 Web 技术文档",
+			// 	weight: 9,
+			// },
+			// {
+			// 	title: "Astro",
+			// 	url: "https://astro.build",
+			// 	desc: "内容驱动型网站的 Web 框架",
+			// 	weight: 8,
+			// },
+			// {
+			// 	title: "Svelte",
+			// 	url: "https://svelte.dev",
+			// 	desc: "把组件编译成高效原生 JS 的框架",
+			// 	weight: 7,
+			// },
+			// {
+			// 	title: "Tailwind CSS",
+			// 	url: "https://tailwindcss.com",
+			// 	desc: "一个功能强大且灵活的 CSS 框架",
+			// 	weight: 6,
+			// },
 		],
 	},
 	{
@@ -75,10 +75,10 @@ export const booknavConfig: BooknavGroup[] = [
 		weight: 90,
 		items: [
 			{
-				title: "Firefly",
-				url: "https://github.com/CuteLeaf/Firefly",
-				desc: "清晰美观的 Astro 个人博客主题模板",
-				icon: "/favicon/firefly-32.png",
+				title: "QzoneArchive",
+				url: "https://github.com/Gaoshu705/QzoneArchive",
+				desc: "将 QQ 空间历史动态、照片、视频与互动记录安全归档到本地的桌面 / 移动端工具。",
+				// icon: "/favicon/firefly-32.png",
 				weight: 10,
 			},
 		],
@@ -91,16 +91,10 @@ export const booknavConfig: BooknavGroup[] = [
 		weight: 90,
 		items: [
 			{
-				title: "Iconify",
-				url: "https://icon-sets.iconify.design",
-				desc: "海量开源图标集合搜索",
-				weight: 10,
-			},
-			{
 				title: "iconfont",
 				url: "https://www.iconfont.cn",
 				desc: "阿里巴巴矢量图标库",
-				weight: 9,
+				weight: 10,
 			},
 		],
 	},
@@ -135,14 +129,14 @@ export const booknavConfig: BooknavGroup[] = [
 		id: "resources",
 		name: "资源",
 		icon: "material-symbols:auto-stories-outline-rounded",
-		desc: "文档、教程与阅读",
+		desc: "文档、资源分享",
 		weight: 70,
 		items: [
 			{
-				title: "Firefly Docs",
-				url: "https://docs-firefly.cuteleaf.cn",
-				desc: "Firefly 主题模板文档",
-				icon: "https://docs-firefly.cuteleaf.cn/logo.png",
+				title: "联通双会员每月领取",
+				url: "https://ap2.hzzznet.cn/front/h5-l-gie6lelphbknn4/login.html",
+				desc: "联通套餐包含领取会员的，我懒得记就放这里了先。",
+				icon: "",
 				weight: 10,
 			},
 			{
