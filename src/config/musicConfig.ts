@@ -24,7 +24,7 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 	meting: {
 		// Meting API 地址
 		// 默认使用官方 API，也可以使用自定义 API
-		api: "http://music.xyu.homes/api?server=:server&type=:type&id=:id&r=:r",
+		api: "http://music.xyu.homes/meting/api?server=:server&type=:type&id=:id&r=:r",
 		// 音乐平台：netease=网易云音乐, tencent=QQ音乐, kugou=酷狗音乐, xiami=虾米音乐, baidu=百度音乐
 		server: "tencent",
 		// 类型：song=单曲, playlist=歌单, album=专辑, search=搜索, artist=艺术家
@@ -45,15 +45,15 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 	// lrc: "/assets/music/lrc/使一颗心免于哀伤-哼唱.lrc",
 	// 2. 或者直接填入歌词字符串内容
 	// lrc: "[00:00.00]歌词内容...",
-	local: {
-		playlist: [
-			{
-				name: "使一颗心免于哀伤",
-				artist: "知更鸟 / HOYO-MiX / Chevy",
-				url: "/assets/music/使一颗心免于哀伤-哼唱.mp3",
-				cover: "/assets/music/cover/109951169585655912.webp",
-				lrc: "",
-			},
-		],
-	},
+	// local: {
+	// 	playlist: [
+	// 		{
+	// 			name: "使一颗心免于哀伤",
+	// 			artist: "知更鸟 / HOYO-MiX / Chevy",
+	// 			url: "/assets/music/使一颗心免于哀伤-哼唱.mp3",
+	// 			cover: "/assets/music/cover/109951169585655912.webp",
+	// 			lrc: "",
+	// 		},
+	// 	],
+	// },
 };
