@@ -8,4 +8,9 @@ category: 前端开发
 draft: false
 ---
 # test
-这是测试
+
+# 这是测试
+    docker pull nginx:latest
+
+
+ 
