@@ -73,20 +73,18 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			// 是否启用主页横幅文字
 			enable: true,
 			// 主页横幅主标题
-			title: "Lovely firefly!",
+			title: "Eat Sleep Teamfight-Tactics",
 			// 主页横幅主标题字体大小
-			titleSize: "4.5rem",
+			titleSize: "4.0rem",
 			// 主页横幅副标题
 			subtitle: [
-				"In Reddened Chrysalis, I Once Rest",
-				"From Shattered Sky, I Free Fall",
-				"Amidst Silenced Stars, I Deep Sleep",
-				"Upon Lighted Fyrefly, I Soon Gaze",
-				"From Undreamt Night, I Thence Shine",
-				"In Finalized Morrow, I Full Bloom",
+				"Every Morning, Play Teamfight Tactics",
+				"Every Noon, Play Teamfight Tactics",
+				"Every Afternoon, Play Teamfight Tactics",
+				"Every Evening, Play Teamfight Tactics",
 			],
 			// 主页横幅副标题字体大小
-			subtitleSize: "1.5rem",
+			subtitleSize: "1.3rem",
 			typewriter: {
 				// 是否启用打字机效果
 				// 打字机开启 → 循环显示所有副标题
