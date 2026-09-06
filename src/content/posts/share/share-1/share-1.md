@@ -104,8 +104,8 @@ URL地址默认是300s过期可以改久一点
 下面是ssh连接信息
 > ssh-port：`22`     
 > user：`root`    
-> password：`luminous`
-> 我使用的ssh连接工具是 **xterminal** 一款美观的ssh工具, [点击前往官网](https://www.xterminal.cn/)  
+> password：`luminous`        
+> 我使用的ssh连接工具是 **xterminal** 一款美观的ssh工具, [点击前往官网](https://www.xterminal.cn/)       
 > ![xterminal](https://www.xterminal.cn/_nuxt/1777562584201/app_blacked2DCjThr-q.png)
 
 ### 一键配置脚本
