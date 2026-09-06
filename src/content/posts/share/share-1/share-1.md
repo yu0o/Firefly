@@ -47,13 +47,13 @@ seriesOrder: 2 # 系列中的排序序号 (number, 选填)
 * 略懂linux命令
 * 阿里云账号
 * alpine-mini镜像
-    > 镜像来自于网络，[点击下载](https://hihh.lanzouw.com/iS5Bl46wazcf) **下载为zip, 需要解压得到.vhd**  
+    > 镜像来自于 **Eianun** [点击下载](https://hihh.lanzouw.com/iS5Bl46wazcf) **下载为zip 需要解压得到.vhd**  
     > ssh：`22`     
     > user：`root`    
     > password：`luminous`
 # 开始
 ## 1.制作自定义镜像
-1. 打开[OSS控制台](https://oss.console.aliyun.com/bucket),  选择想要的地域创建 **Bucket**, 我这里使用的是青岛的存储桶
+1. 打开[OSS控制台](https://oss.console.aliyun.com/bucket) 选择想要的地域创建 **Bucket** 我这里使用的是青岛的存储桶
 2. 上传 **alpine-mini.vhd** 镜像并 **复制镜像URL地址** 
         ![1](./1.png)
 :::TIP
@@ -61,16 +61,16 @@ URL地址默认是300s过期可以改久一点
 导入镜像时提示没有找到镜像可以重新获取一次
 :::
 1. 导入镜像
-   1. 打开[ECS镜像控制台](https://ecs.console.aliyun.com/image/region/), 选择OSS所在的地域, 点击`导入镜像`
+   1. 打开[ECS镜像控制台](https://ecs.console.aliyun.com/image/region/) 选择OSS所在的地域 点击`导入镜像`
    ![示例](./2.png)
    2. 第一次使用需要进行**授权**
    ![示例](./3.png)
    3. 填写相关配置
-      * 前面保存的`URL地址` **提示没有找到镜像检查地域是否和OSS一致,也可能是过期了重新获取一次**
+      * 前面保存的`URL地址` **提示没有找到镜像检查地域是否和OSS一致 也可能是过期了重新获取一次**
       * 操作系统类型: `Linux`
       * 操作系统版本: `Customized Linux`
       * 系统架构: `64位操作系统`
-      * 云盘属性: `勾选☑️, 并配置为2GB`
+      * 云盘属性: `勾选☑️ 并配置为2GB`
       * 其他默认
     ![示例1](./4.png) 
     ![示例2](./5.png)
@@ -88,7 +88,7 @@ URL地址默认是300s过期可以改久一点
 :::
 
 # 后续操作 ! ! !
-## 上岸第一步是忘本, 购买服务器也是, 删除以下资源以防额外扣费
+## 上岸第一步是忘本 购买服务器也是 删除以下资源以防额外扣费
 1. 删除
    * **删除自定义镜像**
     >  如果你不在该区域创建新机器可以删除 [前往删除](https://ecs.console.aliyun.com/image/region/)
@@ -97,29 +97,29 @@ URL地址默认是300s过期可以改久一点
     >  `云盘快照`和`自动快照策略`都可以删除 [前往删除](https://ecs.console.aliyun.com/autoSnapshotPolicy/region)
       ![快照删除](./delete2.jpg)
    * **OSS存储桶删除**
-    > 这个完全没用, 删掉 [前往储存桶](https://oss.console.aliyun.com/bucket)
-    > 找到你创建的存储桶, 删掉桶内文件, 再删除桶
+    > 这个完全没用 删掉 [前往储存桶](https://oss.console.aliyun.com/bucket)
+    > 找到你创建的存储桶 删掉桶内文件 再删除桶
 ## 配置机器
 ### SSH连接
 下面是ssh连接信息
 > ssh-port：`22`     
 > user：`root`    
 > password：`luminous`        
-> 我使用的ssh连接工具是 **xterminal** 一款美观的ssh工具, [点击前往官网](https://www.xterminal.cn/)       
+> 我使用的ssh连接工具是 **xterminal** 一款美观的ssh工具  [点击前往官网](https://www.xterminal.cn/)       
 > ![xterminal](https://www.xterminal.cn/_nuxt/1777562584201/app_blacked2DCjThr-q.png)
 
 ### 一键配置脚本
 可以使用我的一键脚本包含 `扩容` `ntp` `ssh` `docker` `流量监控通知`    
 **已经多次测试 完全没毛 放心使用**
 ```
-# 1. 下载脚本到当前目录，赋予执行权限
+# 1. 下载脚本到当前目录 赋予执行权限
 wget -O alpine.sh xyu.homes/sh/alpine.sh && chmod +x alpine.sh
 ```
 ``` 
 # 2.执行
 ./alpine.sh
 ``` 
-按顺序依次执行, 再次运行输入 `./alpine.sh` 即可, 下面是示例
+按顺序依次执行 再次运行输入 `./alpine.sh` 即可  下面是示例
 ```
 ========================================
   Alpine Toolbox - 多功能管理
@@ -137,12 +137,12 @@ wget -O alpine.sh xyu.homes/sh/alpine.sh && chmod +x alpine.sh
 请选择 [0-7]:
 ```
 :::warning
-1)  磁盘扩容是必要的, 不然空间会不足        
-2)  设置时区也是必要的, 不然流量监控的时间会对不上    
-3)  修复SSH是可选的, 如果你可以正常SSH选和不选都行    
-4)  安装Alpine原生Docker, 这个也是可选的看你用不用的上需要注意的是无法运行太大的项目, 配置不支持    
-5)  一键执行2-3-4, 如果你使用Docker可以选择这个, 最大的好处是可以少点几下   
-6)  部署监控, 这个非常有必要, 防止流量用超额外付费, 可以设置自动关机和企业微信机器人通知, 下面会介绍如何配置  
+1)  磁盘扩容是必要的 不然空间会不足        
+2)  设置时区也是必要的 不然流量监控的时间会对不上    
+3)  修复SSH是可选的 如果你可以正常SSH选和不选都行    
+4)  安装Alpine原生Docker 这个也是可选的看你用不用的上需要注意的是无法运行太大的项目 配置不支持    
+5)  一键执行2-3-4 如果你使用Docker可以选择这个 最大的好处是可以少点几下   
+6)  部署监控 这个非常有必要 防止流量用超额外付费 可以设置自动关机和企业微信机器人通知 下面会介绍如何配置  
 7)  查看系统状态
 :::
 #### 磁盘扩容
@@ -202,19 +202,19 @@ wget -O alpine.sh xyu.homes/sh/alpine.sh && chmod +x alpine.sh
 > ``` 
 
 
-#### 设置时区, SSH修复
+#### 设置时区  SSH修复
 > 运行脚本 `./alpine.sh` 再输入 `2` 即可设置时区    
 > 输入 `3` 即可修复SSH
 #### 安装Docker和Docker Compose 
-> 运行脚本 `,/alpine.sh` 再输入 `4` 即可一键安装Docker和Docker Compose    
+> 运行脚本 `./alpine.sh` 再输入 `4` 即可一键安装Docker和Docker Compose    
 > 如果你决定使用**Docker** 建议直接输入 `5` 初始化
 #### 配置流量监控通知
-> 这个就是重中之重了, 不想收到天价账单一定要配置
-> 1. 获取企业微信机器人 `(可选)` 不设置也没关系, 主要是自动关机        
-   > 自行获取机器人 **webhook地址**     
+> 这个就是重中之重了 不想收到天价账单一定要配置
+> 1. 获取企业微信机器人 `(可选)` 不设置也没关系 主要是自动关机        
+   > 自行获取机器人 **webhook地址** 可以参考这个教程 [点击前往](https://www.tencentcloud.com/zh/document/product/1254/78645)          
    > 格式为 `https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxx`   
 >  2. 执行脚本 `./alpine.sh` 输入 `6` 按提示输入即可    
->     国内ECS流量是 **20GB** , 国外ECS流量是 **200GB** , 示例如下:
+>     国内ECS流量是 **20GB**  国外ECS流量是 **200GB**  示例如下:
 > ```
 > ========================================
 >   Alpine Toolbox - 多功能管理
@@ -316,6 +316,13 @@ wget -O alpine.sh xyu.homes/sh/alpine.sh && chmod +x alpine.sh
 > ```
 
 # 结尾
+## 修改密码
+```
+# 修改密码命令
+passwd root
+# 再输入两遍新密码就可以使用了
+```
+
 :::TIP
 > 本教程参考 **Eianun** 的博客教程进行优化 [点击前往Eianun's Blog](https://blog.020915.xyz/archives/aliyun)   
 > 
