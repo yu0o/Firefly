@@ -110,7 +110,7 @@ export const siteConfig: SiteConfig = {
 		// 使用 Astro 图标库时不需要设置 valueDark，图标会自动跟随主题亮暗色切换
 		logo: {
 			type: "image",
-			value: "/favicon/favicon.png",
+			value: "favicon/favicon.png",
 			// valueDark: "assets/images/logo/firefly-dark.png",
 			alt: "Logo",
 		},
