@@ -451,6 +451,83 @@ const siteLogo = await getSiteLogo();
 
     <!-- Font Setup (Astro Font API) -->
     <FontSetup />
+
+<script is:inline>
+(function () {
+  // 域名 → 站点信息
+  var SITE_MAP = {
+    "hihh.cc": {
+      title: "每天都好饿",
+      mpsCode: "xxxxx",
+      mpsText: "豫公网安备-还未申请成功"
+    },
+    "xyu.homes": {
+      title: "今天还是没下雨",
+      mpsCode: "41152502000272",
+      mpsText: "豫公网安备41152502000272号"
+    },
+    "localhost": {
+      title: "test",
+      mpsCode: "test",
+      mpsText: "测试公安备案号"
+    }
+  };
+
+  function currentSite() {
+    var host = location.hostname.replace(/^www\./, "");
+    return SITE_MAP[host] || SITE_MAP[location.hostname] || null;
+  }
+
+  // 只改标题
+  function applyTitle() {
+    var s = currentSite();
+    if (!s) return;
+    document.title = s.title;
+    var og = document.querySelector('meta[property="og:site_name"]');
+    if (og) og.setAttribute("content", s.title);
+  }
+
+  // 只改公安网备案号文字 + 链接，图标和工信部备案不动
+  function applyMps() {
+    var s = currentSite();
+    if (!s) return false;
+
+    var mpsLink = document.querySelector('a[href*="beian.mps.gov.cn"]');
+    if (!mpsLink) return false;
+
+    if (mpsLink.textContent !== s.mpsText) {
+      mpsLink.textContent = s.mpsText;
+    }
+
+    var newHref = "https://beian.mps.gov.cn/#/query/webSearch?code=" + s.mpsCode;
+    if (mpsLink.href !== newHref) {
+      mpsLink.href = newHref;
+    }
+    return true;
+  }
+
+  function applyAll() {
+    applyTitle();
+    return applyMps();
+  }
+
+  // 立即试一次，找不到就轮询等待页脚渲染
+  var ok = applyAll();
+  if (!ok) {
+    var tries = 0;
+    var timer = setInterval(function () {
+      tries++;
+      if (applyAll() || tries >= 50) clearInterval(timer);
+    }, 100);
+  }
+
+  // Swup 切页后重新应用
+  document.addEventListener("swup:page:view", applyAll);
+  document.addEventListener("swup:content:replace", applyAll);
+})();
+</script>
+
+
   </head>
   <body
     class="min-h-screen"
